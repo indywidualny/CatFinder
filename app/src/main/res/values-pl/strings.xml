@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Znajdź kota</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="choose_email_client">Wybierz klienta poczty</string>
+    <string name="email_author">Napisz do mnie</string>
+    <string name="main_button">Naciśnij tylko przycisk!</string>
+    <string name="no_sounds">Nic nie jest wybrane ;)</string>
+    <string name="preference_category1">Wybierz dźwięki</string>
+    <string name="preference_category2">Miłośnik kotów</string>
+    <string name="s1">Słój karmy</string>
+    <string name="s2">Pełna miska</string>
+    <string name="s3">Mała siatka</string>
+    <string name="s4">Duża siatka</string>
+    <string name="title_activity_settings">Strona ustawień</string>
+
+</resources>

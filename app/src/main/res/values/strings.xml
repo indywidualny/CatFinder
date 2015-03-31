@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cat Finder</string>
+    <string name="main_button">Push the button!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings Page</string>
+    <string name="preference_category1">Pick sounds</string>
+    <string name="preference_category2">Cat lover</string>
+    <string name="no_sounds">You didn\'t pick anything ;)</string>
+    <string name="s1">Food jar</string>
+    <string name="s2">Food bowl</string>
+    <string name="s3">Chips soft</string>
+    <string name="s4">Chips loud</string>
+    <string name="author" translatable="false">Krzysztof \'Koras\' Grabowski</string>
+    <string name="author_more" translatable="false">Indywidualni.org</string>
+    <string name="email_author">Contact me</string>
+    <string name="choose_email_client">Choose e-mail client</string>
+    <string name="meow" translatable="false">Meow!</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-1012663270989447/6708032416</string>
+
+</resources>
