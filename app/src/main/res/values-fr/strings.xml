@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trouve le chat</string>
+    <string name="email_author">Ecris-moi</string>
+    <string name="preference_category1">Choisis les sons</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="choose_email_client">Choisis le programme du e-mail</string>
+    <string name="main_button">Appuie seulement le bouton!</string>
+    <string name="no_sounds">Rien n\'est choisi ;)</string>
+    <string name="preference_category2">Le passionnat des chats</string>
+    <string name="s1">Le pot de nourriture</string>
+    <string name="s2">Le plat plein</string>
+    <string name="s3">Le petit filet</string>
+    <string name="s4">Le grand filet</string>
+    <string name="title_activity_settings">La page de paramètres</string>
+</resources>

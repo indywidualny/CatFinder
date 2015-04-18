@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Znajdź kota</string>
     <string name="action_settings">Ustawienia</string>
     <string name="choose_email_client">Wybierz klienta poczty</string>
@@ -14,5 +13,4 @@
     <string name="s3">Mała siatka</string>
     <string name="s4">Duża siatka</string>
     <string name="title_activity_settings">Strona ustawień</string>
-
 </resources>

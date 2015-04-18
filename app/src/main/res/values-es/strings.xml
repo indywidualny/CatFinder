@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Encuentra el gato</string>
+    <string name="email_author">Escríbeme</string>
+    <string name="no_sounds">Nada está elegido ;)</string>
+    <string name="preference_category1">Elige los sonidos</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="choose_email_client">Elige el programa del correro</string>
+    <string name="main_button">¡Aprieta solo el botón!</string>
+    <string name="preference_category2">El apasionado de los gatos</string>
+    <string name="s1">El pote de alimentación</string>
+    <string name="s2">La escudilla llena</string>
+    <string name="s3">La bolsa pequeña</string>
+    <string name="s4">La bolsa grande</string>
+    <string name="title_activity_settings">La página de ajustes</string>
+</resources>
