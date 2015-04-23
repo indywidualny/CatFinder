@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Знайди Кота</string>
+    <string name="main_button">Натисни кнопку!</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="title_activity_settings">Сторінка налаштувань</string>
+    <string name="preference_category1">Вибери звуки</string>
+    <string name="preference_category2">Котолюб</string>
+    <string name="no_sounds">Ти нічого не вибрав ;)</string>
+    <string name="s1">Банка з кормом</string>
+    <string name="s2">Миска з кормом</string>
+    <string name="s3">Чіпси тихо</string>
+    <string name="s4">Чіпси голосно</string>
+    <string name="email_author">Напиши до мене</string>
+    <string name="choose_email_client">Вибери клієнт електронної пошти</string>
+    <!-- <string name="meow">Мяу!</string> -->
+</resources>
