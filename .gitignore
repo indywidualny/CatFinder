@@ -1,4 +1,5 @@
 *.iml
+*.apk
 *.directory
 .gradle
 .idea/
