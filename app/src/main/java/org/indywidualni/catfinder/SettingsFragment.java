@@ -5,7 +5,6 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.widget.Toast;
 
-
 public class SettingsFragment extends PreferenceFragment {
 
     private int clickCounter = 0;
@@ -25,7 +24,8 @@ public class SettingsFragment extends PreferenceFragment {
                     // count clicks, 4th click shows a toast
                     clickCounter++;
                 } else {
-                    Toast.makeText(getActivity(), getString(R.string.meow), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            getString(R.string.meow), Toast.LENGTH_SHORT).show();
                     clickCounter = 0;
                 }
                 return true;

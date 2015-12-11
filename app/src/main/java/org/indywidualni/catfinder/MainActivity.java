@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
-import android.os.Handler;
-import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,74 +15,70 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends ActionBarActivity {
-
-    private MediaPlayer mp;
+    private MediaPlayer player;
     private boolean isPlaying = false;
-    final Random r = new Random();
+    private final Random randGenerator = new Random();
+    private ArrayList<Integer> sounds;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // get shared preferences
-        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        // create array list for chosen files
-        final ArrayList<Integer> sounds = new ArrayList<Integer>();
-
-        if(preferences.getBoolean("s1", true))
-            sounds.add(R.raw.food_jar);
-        if(preferences.getBoolean("s2", true))
-            sounds.add(R.raw.food_bowl);
-        if(preferences.getBoolean("s3", true))
-            sounds.add(R.raw.chips_low);
-        if(preferences.getBoolean("s4", true))
-            sounds.add(R.raw.chips_loud);
+        // set a toolbar to replace the action bar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         // use a beautiful IndieFlower font
         Typeface face = Typeface.createFromAsset(getAssets(), "IndieFlower.ttf");
         TextView textView = (TextView)this.findViewById(R.id.text1);
         textView.setTypeface(face);
 
+        // get shared preferences
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // add sounds to new ArrayList
+        addSounds();
+
         // create a clickable button from an image
         ImageView play = (ImageView)this.findViewById(R.id.button1);
         play.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                if(!sounds.isEmpty()) {
+                if (!sounds.isEmpty()) {
                     if (isPlaying) {
                         // if clicked the second time stop the player
-                        //Log.v("isPlaing", "second click to stop");
-                        mp.stop();
+                        player.stop();
                         isPlaying = false;
                     } else {
                         // nothing is played, start the player
-                        //Log.v("!isPlaing", "just started");
-
                         // animate the button
                         v.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_click));
                         // generate a random number every time someone clicks
-                        int rndm = r.nextInt(sounds.size());
+                        int rand = randGenerator.nextInt(sounds.size());
                         // set a random sound file to play
-                        mp = MediaPlayer.create(getApplicationContext(), sounds.get(rndm));
+                        player = MediaPlayer.create(getApplicationContext(), sounds.get(rand));
 
                         // when finished change isPlaying to false
-                        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override public void onCompletion(MediaPlayer mp) {
+                        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
                                 // playback completed
-                                //Log.v("onCompletion", "playback completed");
                                 isPlaying = false;
                             }
                         });
 
-                        mp.start();
+                        player.start();
                         isPlaying = true;
                     }
                 } else {
@@ -97,6 +92,20 @@ public class MainActivity extends ActionBarActivity {
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+    }
+
+    private void addSounds() {
+        // create array list for chosen files
+        sounds = new ArrayList<>();
+
+        if (preferences.getBoolean("s1", true))
+            sounds.add(R.raw.food_jar);
+        if (preferences.getBoolean("s2", true))
+            sounds.add(R.raw.food_bowl);
+        if (preferences.getBoolean("s3", true))
+            sounds.add(R.raw.chips_low);
+        if (preferences.getBoolean("s4", true))
+            sounds.add(R.raw.chips_loud);
     }
 
     @Override
@@ -118,16 +127,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        // delaying the recreate() call for one millisecond
-        // the activity gets properly resumed and it is only then killed
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // recreate the Activity to reload all checked sounds
-                recreate();
-            }
-        }, 1);
+        // add sounds to new ArrayList
+        addSounds();
     }
 
 }

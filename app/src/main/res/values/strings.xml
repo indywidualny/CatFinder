@@ -17,4 +17,7 @@
     <string name="choose_email_client">Choose e-mail client</string>
     <string name="meow" translatable="false">Meow!</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-1012663270989447/6708032416</string>
+
+    <!-- Test ads -->
+<!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
 </resources>
