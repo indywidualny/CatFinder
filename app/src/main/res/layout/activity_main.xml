@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -34,7 +33,7 @@
             android:background="@drawable/button_decoration" />
 
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/text"
             android:layout_below="@+id/button1"
             android:paddingTop="25dp"
             android:textSize="30sp"

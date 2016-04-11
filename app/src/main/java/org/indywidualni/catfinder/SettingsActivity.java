@@ -42,12 +42,21 @@ public class SettingsActivity extends AppCompatActivity {
             case R.id.email_me:
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                         "mailto", "koras@indywidualni.org", null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name) + ": " + getString(R.string.title_activity_settings));
-                startActivity(Intent.createChooser(emailIntent, getString(R.string.choose_email_client)));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name) + ": " +
+                        getString(R.string.title_activity_settings));
+                startActivity(Intent.createChooser(emailIntent,
+                        getString(R.string.choose_email_client)));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        // in order to recreate Main Activity after leaving Settings with a back button
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
